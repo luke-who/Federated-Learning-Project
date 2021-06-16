@@ -60,8 +60,8 @@ def reduction_functions():
 
   plt.xlim(0,150)
   plt.ylim(0,400)
-  plt.xlabel("Rounds")
-  plt.ylabel("Number of clients")
+  plt.xlabel("Round")
+  plt.ylabel("Number of clients / Round")
   plt.legend()
   # plt.title("Reduction functions")
   plt.show()
@@ -119,7 +119,7 @@ def uniform_vs_num_clients_weighting():
     global_accuracy = pickle.load(fp)
   plt.plot(num_rounds, [x*100 for x in global_accuracy[:NUM_ROUNDS]], label=f"{NUM_CLIENTS[1]} clients, weighted by UNIFORM")
 
-  plt.xlabel('Rounds',size=12)
+  plt.xlabel('Round',size=12)
   plt.ylabel('Test accuracy (%)',size=12)
   plt.legend()
   plt.show()
@@ -134,7 +134,7 @@ def accuracy_5_34_338_comparison():
     with open(f"metrics/{NUM_CLIENTS[n]}_clients_{NUM_ROUNDS}_rounds_{NUM_EPOCHS}_epochs_accuracy_global.txt","rb") as fp: #unpickling
       global_accuracy = pickle.load(fp)
     plt.plot(num_rounds, [x*100 for x in global_accuracy[:NUM_ROUNDS]], label=f"{NUM_CLIENTS[n]} random clients")
-  plt.xlabel('Rounds',size=12)
+  plt.xlabel('Round',size=12)
   plt.ylabel('Test accuracy (%)',size=12)
   plt.legend()
   plt.show()
@@ -156,7 +156,7 @@ def reduction_functions_comparison(mode):
 
 
 
-      plt.xlabel('Rounds',size=12)
+      plt.xlabel('Round',size=12)
       plt.ylabel('Test accuracy (%)',size=12)
       plt.legend()
       plt.show()
