@@ -11,12 +11,12 @@
 <!-- [![GCP](https://img.shields.io/badge/Google%20Cloud%20Platform(GCP)-_-4285F4?logo=Google-Cloud)](https://cloud.google.com/) -->
 <!-- [![GCP](https://img.shields.io/badge/Google%20Cloud%20Platform(GCP)-white?logo=Google-Cloud)](https://cloud.google.com/) -->
 
-##Motivation 
+## Motivation 
 This project attempts to explore the communication efficiency and scalibility of the existing federated machine learning techniques and possible improvements and futher optimisation 
 ##Aim
 The aim of this project is to investigate, design and evaluate different methods to reduce overall data communication during federated learning scenarios, therefore further improve the existing federated learning system without sacrificing convergence rate
 
-##Objectives
+## Objectives
 * Research the necessary library and development environment to conduct various FL simulations
 * Create suitable unbalanced dataset, to simulate real world FL system and evaluate corresponding methods
 * Build FL model with existing machine learning framework using basic model aggregation such as averaged weights update ($Fed\Avg$)
@@ -27,11 +27,11 @@ The aim of this project is to investigate, design and evaluate different methods
 # Getting Started
 -----------------------------------------------------------------------------------
 <!-- TODO: Guide users through getting your code up and running on their own system. In this section you can talk about: -->
-##1.    Installation process on Ubuntu
+## 1.    Installation process on Ubuntu
 
 For setting up GCP, since the algorithm is not memory optimised, the memory usage was very intensive while running different reduction functions in `tff_vary_num_clients_and_rounds.py`.  This is likely due to the fact that TFF is not currently optimised for selecting a varying number of clients as it seems to mess up 
 with the state during the iterative process and taking up huge accumulative memory.  As a result, the RAM in VM required on GCP for running tff_vary_num_clients_and_rounds.py was 128GB, at its peak it's using around 50% of the total memory so it's sth to keep in mind. 
-###Install TensorFlow with pip
+### Install TensorFlow with pip
 1. Install the Python development environment on your system
 
     `sudo apt update ; sudo apt upgrade`
@@ -68,7 +68,7 @@ with the state during the iterative process and taking up huge accumulative memo
 
     `(venv) $ python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"`
 
-###Install the released TensorFlow Federated Python package
+### Install the released TensorFlow Federated Python package
 1. Install Tensorflow Federated 
 
     `(venv) $ pip install tensorflow-federated==0.18.0`
@@ -81,13 +81,13 @@ with the state during the iterative process and taking up huge accumulative memo
 
     `(venv) $ deactivate`
 
-##2.    Software dependencies
+## 2.    Software dependencies
 ###Python version
 The python version in this project throughout was [3.8.8](https://www.python.org/downloads/release/python-388/), [pyenv](https://github.com/pyenv/pyenv) was used to manage different python versions
-###pypi packages
+### pypi packages
 All the dependacies, versions and necessary packages are exported & listed in [requirements.txt](requirements.txt)(albeit not all of them are useful to run on local machines). 
-###To install the requirements, do `pip3 install -r requirements.txt`
-###Dealing with OSError: [Errno 24] Too many open files
+### To install the requirements, do `pip3 install -r requirements.txt`
+### Dealing with OSError: [Errno 24] Too many open files
 First `sudo nano /etc/pam.d/common-session`
 
 Then add `session required pam_limits.so` to `/etc/pam.d/common-session`
@@ -104,8 +104,8 @@ Then set
 
 `ulimit -n 500000`
 
-##3.	Latest releases
-##4.	API references
+## 3.	Latest releases
+## 4.	API references
 
 # Build and Test
 -----------------------------------------------------------------------------------
