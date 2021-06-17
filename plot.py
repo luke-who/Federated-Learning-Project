@@ -13,12 +13,12 @@ from tensorflow.python.framework.constant_op import constant
 
 
 
-NUM_CLIENTS = [5,34,338]
+NUM_CLIENTS = [5,34,338,1692]
 NUM_ROUNDS = 150
 NUM_EPOCHS = 5
 
 
-MODES = ['reduction_functions', 'femnist_distribution', 'uniform_vs_num_clients_weighting', 'accuracy_5_34_338_comparison', 'reduction_functions_comparison','updates_comparison']
+MODES = ['reduction_functions', 'femnist_distribution', 'uniform_vs_num_clients_weighting', 'accuracy_10percent_vs_50percent_clients_comparison', 'accuracy_5_34_338_comparison', 'reduction_functions_comparison','updates_comparison']
 modes = ["constant","exponential","linear","sigmoid","reciprocal"]
 num_rounds = np.arange(1,NUM_ROUNDS+1)
 num_clients = str(NUM_CLIENTS[0])
@@ -108,14 +108,14 @@ def femnist_distribution():
 #################################################### Plot for different weightings strategies ################################################################
 ##############################################################################################################################################################
 def uniform_vs_num_clients_weighting():
-  with open(f"metrics/num_examples_vs_uniform/{34}_clients_{NUM_ROUNDS}_rounds_{NUM_EPOCHS}_epochs_accuracy_global.txt","rb") as fp: #unpickling
-      global_accuracy = pickle.load(fp)
+  with open(f"metrics/num_examples_vs_uniform/{NUM_CLIENTS[1]}_clients_{NUM_ROUNDS}_rounds_{NUM_EPOCHS}_epochs_accuracy_global.txt","rb") as fp: #unpickling
+    global_accuracy = pickle.load(fp)
   # plot global accuracy & loss for all training rounds
   plt.plot(num_rounds, [x*100 for x in global_accuracy[:NUM_ROUNDS]], label=f"{NUM_CLIENTS[1]} clients, weighted by NUM_EXAMPLES")
   # num_rounds_av = movingaverage(num_rounds, 4)
   # plt.plot(num_rounds_av, global_accuracy[:147])
 
-  with open(f"metrics/num_examples_vs_uniform/{34}_clients_uniform_weights_{NUM_ROUNDS}_rounds_{NUM_EPOCHS}_epochs_accuracy_global.txt","rb") as fp: #unpickling
+  with open(f"metrics/num_examples_vs_uniform/{NUM_CLIENTS[1]}_clients_uniform_weights_{NUM_ROUNDS}_rounds_{NUM_EPOCHS}_epochs_accuracy_global.txt","rb") as fp: #unpickling
     global_accuracy = pickle.load(fp)
   plt.plot(num_rounds, [x*100 for x in global_accuracy[:NUM_ROUNDS]], label=f"{NUM_CLIENTS[1]} clients, weighted by UNIFORM")
 
@@ -125,12 +125,25 @@ def uniform_vs_num_clients_weighting():
   plt.show()
 
 
+##############################################################################################################################################################
+########################################### Plot for the training accuracy of randomly selected 338&1692 clients #############################################
+##############################################################################################################################################################
+def accuracy_10percent_vs_50percent_clients_comparison(): 
+  for i, n in enumerate(NUM_CLIENTS[2:]):
+    with open(f"metrics/{n}_clients_{NUM_ROUNDS}_rounds_{NUM_EPOCHS}_epochs_accuracy_global.txt","rb") as fp: #unpickling
+      global_accuracy = pickle.load(fp)
+    plt.plot(num_rounds, [x*100 for x in global_accuracy[:NUM_ROUNDS]], label=f"{n} random clients")
+
+  plt.xlabel('Round',size=12)
+  plt.ylabel('Test accuracy (%)',size=12)
+  plt.legend()
+  plt.show()
 
 ##############################################################################################################################################################
 ########################################### Plot for the training accuracy of randomly selected 5&34&338 clients #############################################
 ##############################################################################################################################################################
 def accuracy_5_34_338_comparison():
-  for n in range(len(NUM_CLIENTS)):
+  for n in range(len(NUM_CLIENTS[:-1])):
     with open(f"metrics/{NUM_CLIENTS[n]}_clients_{NUM_ROUNDS}_rounds_{NUM_EPOCHS}_epochs_accuracy_global.txt","rb") as fp: #unpickling
       global_accuracy = pickle.load(fp)
     plt.plot(num_rounds, [x*100 for x in global_accuracy[:NUM_ROUNDS]], label=f"{NUM_CLIENTS[n]} random clients")
@@ -147,12 +160,12 @@ def reduction_functions_comparison(mode):
     if mode == "constant":
       continue
     else:
-      with open(f"metrics/vary_num_clients_and_rounds/{NUM_CLIENTS[-1]} -> {NUM_CLIENTS[-1]} clients_constant_accuracy_global.txt","rb") as fp: #unpickling
+      with open(f"metrics/vary_num_clients_and_rounds/{NUM_CLIENTS[-2]} -> {NUM_CLIENTS[-2]} clients_constant_accuracy_global.txt","rb") as fp: #unpickling
         global_accuracy = pickle.load(fp)
-      plt.plot(np.arange(len(global_accuracy)), [x*100 for x in global_accuracy[:NUM_ROUNDS]], label=f"{NUM_CLIENTS[-1]} clients, constant")
-      with open(f"metrics/vary_num_clients_and_rounds/{NUM_CLIENTS[-1]} -> {34} clients_{mode}_accuracy_global.txt","rb") as fp: #unpickling
+      plt.plot(np.arange(len(global_accuracy)), [x*100 for x in global_accuracy[:NUM_ROUNDS]], label=f"{NUM_CLIENTS[-2]} clients, constant")
+      with open(f"metrics/vary_num_clients_and_rounds/{NUM_CLIENTS[-2]} -> {NUM_CLIENTS[1]} clients_{mode}_accuracy_global.txt","rb") as fp: #unpickling
         global_accuracy = pickle.load(fp)
-      plt.plot(np.arange(len(global_accuracy)), [x*100 for x in global_accuracy[:NUM_ROUNDS]], label=f"{NUM_CLIENTS[-1]} -> {34} clients, {mode} reduction")
+      plt.plot(np.arange(len(global_accuracy)), [x*100 for x in global_accuracy[:NUM_ROUNDS]], label=f"{NUM_CLIENTS[-2]} -> {NUM_CLIENTS[1]} clients, {mode} reduction")
 
 
 
@@ -344,19 +357,21 @@ if __name__ == '__main__':
     # load the data
     print(f'plot mode: {mode}')
     if mode == 'reduction_functions':
-        reduction_functions()
+      reduction_functions()
     elif mode == 'femnist_distribution':
-        femnist_distribution()
+      femnist_distribution()
     elif mode == 'uniform_vs_num_clients_weighting':
-        uniform_vs_num_clients_weighting()
+      uniform_vs_num_clients_weighting()
+    elif mode == 'accuracy_10percent_vs_50percent_clients_comparison':
+      accuracy_10percent_vs_50percent_clients_comparison()
     elif mode == 'accuracy_5_34_338_comparison':
-        accuracy_5_34_338_comparison()
+      accuracy_5_34_338_comparison()
     elif mode == 'reduction_functions_comparison':
-        reduction_functions_comparison(modes)
+      reduction_functions_comparison(modes)
     elif mode == 'updates_comparison':
-        updates_comparison()
+      updates_comparison()
     else:
-        raise Exception('Unrecognised mode: {}. Possible modes are: {}'.format(mode, MODES))
+      raise Exception('Unrecognised mode: {}. Possible modes are: {}'.format(mode, MODES))
 
 
 
@@ -385,7 +400,7 @@ if __name__ == '__main__':
 ############################################ Other useful ones but not included in the comand line arguments ################################################
 #############################################################################################################################################################
 # #-----------------Plot the line graphs of the global/server evaluation set accuracy evaluated on global model vs num_rounds for all num_clients --------------------#
-# for n in range(len(NUM_CLIENTS)):
+# for n in range(len(NUM_CLIENTS[:-1])):
 #   with open(f"metrics/{NUM_CLIENTS[n]}_clients_{NUM_ROUNDS}_rounds_{NUM_EPOCHS}_epochs.json", 'r') as f:
 #       sample_clients = json.load(f)
 #       sample_clientnum_examples_vs_uniforms = sample_clients.replace(" ",",")
@@ -416,7 +431,7 @@ if __name__ == '__main__':
 
 
 #-----------------Plot the line graphs of the local/clients' evaluation set accuracy evaluated on global model vs num_rounds for all clients --------------------#
-# for n in range(len(NUM_CLIENTS)):
+# for n in range(len(NUM_CLIENTS[:-1])):
 #   plt.figure(figsize=(13, 8), dpi=100)
 #   for c,client in enumerate(sample_clients):
 #     plt.plot(num_rounds, local_clients_accuracy[c][:NUM_ROUNDS], label=f"client_{client}")

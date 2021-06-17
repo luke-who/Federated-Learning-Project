@@ -131,7 +131,7 @@ The mode you can select are: MODE = `[constant,exponential,linear,sigmoid,recipr
 <!-- `python3 tff_vary_num_clients_and_rounds.py mode &` to run it in the background -->
 
 
-The mode you can select are: mode = `[reduction_functions, femnist_distribution, uniform_vs_num_clients_weighting, accuracy_5_34_338_comparison, reduction_functions_comparison,updates_comparison]`
+The mode you can select are: mode = `['reduction_functions', 'femnist_distribution', 'uniform_vs_num_clients_weighting', 'accuracy_10percent_vs_50percent_clients_comparison', 'accuracy_5_34_338_comparison', 'reduction_functions_comparison','updates_comparison']`
 # Contribute
 -----------------------------------------------------------------------------------
 <!-- TODO: Explain how other users and developers can contribute to make your code better.  -->
