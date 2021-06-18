@@ -82,7 +82,7 @@ with the state during the iterative process and taking up huge accumulative memo
     `(venv) $ deactivate`
 
 ## 2.    Software dependencies
-###Python version
+### Python version
 The python version in this project throughout was [3.8.8](https://www.python.org/downloads/release/python-388/), [pyenv](https://github.com/pyenv/pyenv) was used to manage different python versions
 ### pypi packages
 All the dependacies, versions and necessary packages are exported & listed in [requirements.txt](requirements.txt)(albeit not all of them are useful to run on local machines). 
