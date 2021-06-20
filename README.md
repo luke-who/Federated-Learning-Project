@@ -14,7 +14,7 @@
 ## Motivation 
 This project attempts to explore the communication efficiency and scalibility of the existing federated machine learning techniques and possible improvements and futher optimisation 
 ## Aim
-The aim of this project is to investigate, design and evaluate different methods to reduce overall data communication during federated learning
+The aim of this project is to investigate, design and evaluate different methods to reduce overall data communication during federated learning, without sacrificing learning accuracy
 
 ## Objectives
 * Research the necessary library and development environment to conduct various FL simulations
