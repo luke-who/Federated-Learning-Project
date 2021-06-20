@@ -1,4 +1,4 @@
-# Optimising Federated Machine Learning Model Aggregation Teqniques for IOT 
+# Optimising Communication Efficiency in Federated Learning
 -----------------------------------------------------------------------------------
 [![python](https://img.shields.io/badge/python-3.8.8-blue?style=plastic&logo=python)](https://www.python.org/downloads/release/python-388/)
 [![pip](https://img.shields.io/badge/pypi-v21.0.1-informational?&logo=pypi)](https://pypi.org/project/pip/21.0.1/)
