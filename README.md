@@ -1,7 +1,7 @@
 # Optimising Communication Efficiency in Federated Learning
 -----------------------------------------------------------------------------------
 [![python](https://img.shields.io/badge/python-3.8.8-blue?style=plastic&logo=python)](https://www.python.org/downloads/release/python-388/)
-[![pip](https://img.shields.io/badge/pypi-v21.0.1-informational?&logo=pypi)](https://pypi.org/project/pip/21.0.1/)
+[![pip](https://img.shields.io/badge/pip-v21.0.1-informational?&logo=pypi)](https://pypi.org/project/pip/21.0.1/)
 
 [![tensorflow](https://img.shields.io/badge/tensorflow-2.4.1-orange?logo=TensorFlow)](https://pypi.org/project/tensorflow/2.4.1/)
 [![tensorflow-federated](https://img.shields.io/badge/tensorflow--federated-0.18.0-yellowgreen?logo=TensorFlow)](https://pypi.org/project/tensorflow-federated/0.18.0/)
