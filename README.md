@@ -104,6 +104,9 @@ Then set
 
 `ulimit -n 500000`
 
+to see the change
+
+`ulimit -a`
 ## 3.	Latest releases
 ## 4.	API references
 
