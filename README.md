@@ -12,7 +12,7 @@
 <!-- [![GCP](https://img.shields.io/badge/Google%20Cloud%20Platform(GCP)-white?logo=Google-Cloud)](https://cloud.google.com/) -->
 
 ## Motivation 
-This project attempted to explore the communication efficiency and scalibility of the existing federated machine learning techniques and possible improvements and futher optimisation 
+This project attempted to explore the communication efficiency and scalability of the existing federated machine learning techniques and possible improvements and further optimisation 
 ## Aim
 The aim of this project was to investigate, design and evaluate different methods to reduce overall data communication during federated learning, without sacrificing learning accuracy
 
