@@ -2,16 +2,14 @@
 -----------------------------------------------------------------------------------
 <p align="center">
     <a href="https://github.com/luke-who/Federated-Learning-Project/blob/35fa315c9c0b29851961356121668f774ea6d9a9/fig/Federated%20Diagram.svg">
-        <img src="https://github.com/luke-who/Federated-Learning-Project/blob/35fa315c9c0b29851961356121668f774ea6d9a9/fig/Federated%20Diagram.svg" width = 500/ height=auto>
+        <img src="https://github.com/luke-who/Federated-Learning-Project/blob/35fa315c9c0b29851961356121668f774ea6d9a9/fig/Federated%20Diagram.svg" width = 700/ height=auto>
     </a>
 </p>
 
 [![python](https://img.shields.io/badge/python-3.8.8-blue?style=plastic&logo=python)](https://www.python.org/downloads/release/python-388/)
 [![pip](https://img.shields.io/badge/pip-v21.0.1-informational?&logo=pypi)](https://pypi.org/project/pip/21.0.1/)
-
 [![tensorflow](https://img.shields.io/badge/tensorflow-2.4.1-orange?logo=TensorFlow)](https://pypi.org/project/tensorflow/2.4.1/)
 [![tensorflow-federated](https://img.shields.io/badge/tensorflow--federated-0.18.0-yellowgreen?logo=TensorFlow)](https://pypi.org/project/tensorflow-federated/0.18.0/)
-
 [![Ubuntu 20.04 LTS](https://img.shields.io/badge/ubuntu-20.04_LTS-orange?&color=E95420&logo=ubuntu)](https://releases.ubuntu.com/20.04/)
 [![GCP](https://img.shields.io/badge/Google%20Cloud%20Platform(GCP)-_-4285F4?labelColor=white&logo=Google-Cloud)](https://cloud.google.com/)
 <!-- [![GCP](https://img.shields.io/badge/Google%20Cloud%20Platform(GCP)-_-4285F4?logo=Google-Cloud)](https://cloud.google.com/) -->
