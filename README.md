@@ -1,5 +1,11 @@
 # Optimising Communication Efficiency in Federated Learning
 -----------------------------------------------------------------------------------
+<p align="center">
+    <a href="https://github.com/luke-who/Federated-Learning-Project/blob/35fa315c9c0b29851961356121668f774ea6d9a9/fig/Federated%20Diagram.svg">
+        <img src="https://github.com/luke-who/Federated-Learning-Project/blob/35fa315c9c0b29851961356121668f774ea6d9a9/fig/Federated%20Diagram.svg" width = 500/ height=auto>
+    </a>
+</p>
+
 [![python](https://img.shields.io/badge/python-3.8.8-blue?style=plastic&logo=python)](https://www.python.org/downloads/release/python-388/)
 [![pip](https://img.shields.io/badge/pip-v21.0.1-informational?&logo=pypi)](https://pypi.org/project/pip/21.0.1/)
 
