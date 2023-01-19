@@ -2,7 +2,7 @@
 -----------------------------------------------------------------------------------
 <p align="center">
     <a href="https://github.com/luke-who/Federated-Learning-Project/blob/35fa315c9c0b29851961356121668f774ea6d9a9/fig/Federated%20Diagram.svg">
-        <img src="https://github.com/luke-who/Federated-Learning-Project/blob/35fa315c9c0b29851961356121668f774ea6d9a9/fig/Federated%20Diagram.svg" width = 700/ height=auto>
+        <img src="https://github.com/luke-who/Federated-Learning-Project/blob/35fa315c9c0b29851961356121668f774ea6d9a9/fig/Federated%20Diagram.svg" width = 600/ height=auto>
     </a>
 </p>
 
